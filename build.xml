@@ -10,9 +10,19 @@
              uri="antlib:org.apache.maven.artifact.ant"
              classpathref="maven-ant-tasks.classpath" />
 
-    <target name = "pom.load" description = "">
-        <artifact:pom id="mypom" file="pom.xml" />
-        <echo>The version is ${mypom.version}</echo>
+    <target name = "pom.load" description = "Loads pom in ant">
+        <artifact:pom id="pom" file="pom.xml" />
+        <echo>cups4j version : ${pom.version}</echo>
+    </target>
+    
+    <!-- Java run -->
+    <target name = "hello" depends="pom.load">
+        <java classname="org.cups4j.test.Hello">
+         <classpath>
+           <pathelement location="target/cups4j-${pom.version}.jar"/>
+         </classpath>
+       </java>
+        
     </target>
     
 </project>
