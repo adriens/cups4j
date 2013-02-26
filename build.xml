@@ -21,8 +21,18 @@
          <classpath>
            <pathelement location="target/cups4j-${pom.version}.jar"/>
          </classpath>
+             <arg value="adrien"/>
+       </java>
+    </target>
+    
+    <target name = "printer-attributes.localhost"
+            description="Launches GUI to show localhost printers attributes"
+            depends="pom.load">
+        <java classname="org.cups4j.test.PrinterAttributes">
+         <classpath>
+           <pathelement location="target/cups4j-${pom.version}.jar"/>
+         </classpath>
        </java>
         
     </target>
-    
 </project>
