@@ -14,20 +14,17 @@ package org.cups4j;
  * the GNU Lesser General Public License along with this program; if not, see
  * <http://www.gnu.org/licenses/>.
  */
+import ch.ethz.vppserver.ippclient.IppResult;
+import ch.ethz.vppserver.schema.ippclient.Attribute;
+import ch.ethz.vppserver.schema.ippclient.AttributeGroup;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import org.cups4j.operations.ipp.IppGetJobAttributesOperation;
 import org.cups4j.operations.ipp.IppGetJobsOperation;
 import org.cups4j.operations.ipp.IppPrintJobOperation;
-import org.cups4j.util.IppResultPrinter;
-
-import ch.ethz.vppserver.ippclient.IppResult;
-import ch.ethz.vppserver.schema.ippclient.Attribute;
-import ch.ethz.vppserver.schema.ippclient.AttributeGroup;
 
 /**
  * Represents a printer on your IPP server

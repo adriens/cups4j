@@ -1,8 +1,7 @@
 package ch.ethz.vppserver.ippclient;
 
-import java.util.List;
-
 import ch.ethz.vppserver.schema.ippclient.AttributeGroup;
+import java.util.List;
 
 /**
  * Copyright (C) 2008 ITS of ETH Zurich, Switzerland, Sarah Windler Burri

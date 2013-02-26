@@ -1,19 +1,17 @@
 package ch.ethz.vppserver.ippclient;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.util.List;
-
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.Unmarshaller;
-
 import ch.ethz.vppserver.schema.ippclient.AttributeGroup;
 import ch.ethz.vppserver.schema.ippclient.AttributeList;
 import ch.ethz.vppserver.schema.ippclient.Tag;
 import ch.ethz.vppserver.schema.ippclient.TagList;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.util.List;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
 
 /**
  * Copyright (C) 2008 ITS of ETH Zurich, Switzerland, Sarah Windler Burri

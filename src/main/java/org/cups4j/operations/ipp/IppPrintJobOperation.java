@@ -14,14 +14,12 @@ package org.cups4j.operations.ipp;
  * the GNU Lesser General Public License along with this program; if not, see
  * <http://www.gnu.org/licenses/>.
  */
+import ch.ethz.vppserver.ippclient.IppTag;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.util.Map;
-
 import org.cups4j.operations.IppOperation;
-
-import ch.ethz.vppserver.ippclient.IppTag;
 
 public class IppPrintJobOperation extends IppOperation {
 

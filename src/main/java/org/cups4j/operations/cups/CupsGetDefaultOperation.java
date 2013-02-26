@@ -14,15 +14,13 @@ package org.cups4j.operations.cups;
  * the GNU Lesser General Public License along with this program; if not, see
  * <http://www.gnu.org/licenses/>.
  */
-import java.net.URL;
-import java.util.HashMap;
-
-import org.cups4j.CupsPrinter;
-import org.cups4j.operations.IppOperation;
-
 import ch.ethz.vppserver.ippclient.IppResult;
 import ch.ethz.vppserver.schema.ippclient.Attribute;
 import ch.ethz.vppserver.schema.ippclient.AttributeGroup;
+import java.net.URL;
+import java.util.HashMap;
+import org.cups4j.CupsPrinter;
+import org.cups4j.operations.IppOperation;
 
 public class CupsGetDefaultOperation extends IppOperation {
   public CupsGetDefaultOperation() {

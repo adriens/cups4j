@@ -14,22 +14,19 @@ package org.cups4j.operations.ipp;
  * the GNU Lesser General Public License along with this program; if not, see
  * <http://www.gnu.org/licenses/>.
  */
+import ch.ethz.vppserver.ippclient.IppResult;
+import ch.ethz.vppserver.ippclient.IppTag;
+import ch.ethz.vppserver.schema.ippclient.Attribute;
+import ch.ethz.vppserver.schema.ippclient.AttributeGroup;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-
 import org.cups4j.JobStateEnum;
 import org.cups4j.PrintJobAttributes;
 import org.cups4j.operations.IppOperation;
-import org.cups4j.util.IppResultPrinter;
-
-import ch.ethz.vppserver.ippclient.IppResult;
-import ch.ethz.vppserver.ippclient.IppTag;
-import ch.ethz.vppserver.schema.ippclient.Attribute;
-import ch.ethz.vppserver.schema.ippclient.AttributeGroup;
 
 public class IppGetJobAttributesOperation extends IppOperation {
 

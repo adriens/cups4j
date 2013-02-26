@@ -14,12 +14,11 @@ package org.cups4j.util;
  * the GNU Lesser General Public License along with this program; if not, see
  * <http://www.gnu.org/licenses/>.
  */
-import java.util.List;
-
 import ch.ethz.vppserver.ippclient.IppResult;
 import ch.ethz.vppserver.schema.ippclient.Attribute;
 import ch.ethz.vppserver.schema.ippclient.AttributeGroup;
 import ch.ethz.vppserver.schema.ippclient.AttributeValue;
+import java.util.List;
 
 public class IppResultPrinter {
   /**

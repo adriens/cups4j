@@ -14,10 +14,9 @@ package org.cups4j;
  * the GNU Lesser General Public License along with this program; if not, see
  * <http://www.gnu.org/licenses/>.
  */
+import ch.ethz.vppserver.ippclient.IppResult;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import ch.ethz.vppserver.ippclient.IppResult;
 
 /**
  * Result of a print request 
