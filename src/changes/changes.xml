@@ -1,0 +1,104 @@
+
+<document xmlns="http://maven.apache.org/changes/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/xsd/changes-1.0.0.xsd">
+    <properties>
+        <title>CUPS4J Changes</title>
+        <author email="Adrien.Sales@gmail.com">Adrien SALES</author>
+    </properties>
+    <body>
+      
+        <release version="0.6.4" date="2013-02-22"
+               description="Mavenization and site re-creation">
+            <action dev="adrien" type="add">
+                Project build mavenized.
+            </action>
+            <action dev="adrien" type="add">
+                Original site ported as best as possible to standard maven site.
+            </action>
+            <action dev="adrien" type="update">
+                Updated http-client from 4.1.3 to httpclient-4.2.3, and hence, by
+                transitivty,
+                httpcore from 4.1.4 to 4.2.3 and commons-codec from 1.4 to 1.6.
+            </action>
+            <action dev="adrien" type="update">
+                Some minor code changes (printStacck trace removes,
+                System.exit(1) added, import reorg.
+            </action>
+            <action dev="adrien" type="update">
+                Added PrintCups4jPdfDoc class to org.cups4j.test. This simple class
+                allows print testing
+                using the URL version, to a dedicated printer.
+                It prints the pdf version of the mavenized cups4j website. It also
+                shows how to deal with some simple attributes.
+            </action>
+            <action dev="adrien" type="update">
+                Modified some logs layout in the documentaion to make
+                pdf output nicer to read (text truncated).
+            </action>
+            <action dev="adrien" type="update">
+                Added some TODO tags to mention that call to Vector Class should me
+                upgraded to ArrayList as Vector is now obsolete.
+            </action>
+        </release>
+    
+    
+    
+    
+        <release version="0.6.3" date="2012-08-21" description="Minor Bugfixes">
+            <action dev="Harald" type="fix">
+                Minor Bugfixes
+            </action>
+      
+        </release>
+    
+        <release version="0.6.2" date="2005-01-01" description="First release">
+            <action dev="Harald" type="fix">
+                API bug fix (Important, this can break your code without compile errors) : 
+                when providing attributes to print jobs, those must be separated
+                by '#' instead of ' '. This needed to be changed in order to allow attribute values containing blanks.
+            </action>
+            <action dev="Harald" type="update">
+                API change - CupsClient provides new operations:
+
+                hold job
+                cancel job
+                move job
+            </action>
+            <action dev="Harald" type="update">
+                Minor API changes:
+
+                ArrayLists replaced with List
+                CupsPrinter#getJobs method signature changed to allow for user name and myJobs attributes
+                PrintJobAttributes has four new attributes:
+                Date jobCreateTime;
+                Date jobCompleteTime;
+                int pagesPrinted;
+                int size; // Size of the job in kb (this value is rounded up by the IPP server)
+            </action>
+            <action dev="Harald" type="update">
+                Minor code refactorings.
+
+                performance patches applied (Thanks to Benoit Wiart)
+                smaller code improvements
+            </action>
+        </release>
+    
+        <release version="0.6.1" date="2012-08-21" description="Minor Bugfixes">
+            <action dev="Harald" type="update">
+                Duplex and other print job attributes were ignored by cups
+            </action>
+      
+        </release>
+    
+        <release version="0.6.0" date="2012-08-21" description="Minor Bugfixes">
+            <action dev="Harald" type="update">
+                deprecated print() methods in CupsPrinter removed
+                documents for print jobs can be provided as byte[] or InputStream
+                internal buffering of printable documents removed in order to support streaming
+                changed dependencies to apache httpclient-4.0.3 and httpcore-4.1 (still works with httpclient 4.0 and httpcore-4.0.1)
+                obsolete dependencies removed
+            </action>      
+        </release>
+    </body>
+</document>

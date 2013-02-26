@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faqs xmlns="http://maven.apache.org/FML/1.0.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/FML/1.0.1 http://maven.apache.org/xsd/fml-1.0.1.xsd"
+  title="Frequently Asked Questions"
+  toplink="false">
+
+  <part id="general">
+    <title>General</title>
+
+    <faq id="1">
+      <question>
+        WHY IS IT IMPOSSIBLE TO QUERY PRINTERS OR PRINT ON LINUX SYSTEMS?
+      </question>
+      <answer>
+        <p>Java has problems with Newer Linux systems that use IPV6. You need
+        to set
+        <source>-Djava.net.preferIPv4Stack=true</source>        
+        in your application to make things work.</p>
+      </answer>
+    </faq>
+
+    <faq id="2">
+      <question>
+        WHERE CAN I FIND ANY DOCUMENTATION?
+      </question>
+      <answer>
+        <p>I am sorry, but currently only JavaDoc is available. There will be
+        more sophisticated documentation in future releases.</p>
+      </answer>
+    </faq>
+    
+    <faq id="3">
+      <question>
+        WHAT CAN CUPS4J DO FOR ME?
+      </question>
+      <answer>
+        <p>You can run Cups4J with Java 6.</p>
+        <p>Type: 
+        
+        <source>java -jar cups4j.runnable.jar</source>
+        
+        to get a help message to see what is possible right now. Just give it
+        a try.</p>
+
+        <p>If you use Java 5, you also need JAXB 2.x and the STAX API on your classpath.</p>
+      </answer>
+    </faq>
+    
+    <faq id="4">
+      <question>
+        WHICH FEATURES ARE YOU GOING TO IMPLEMENT ?
+      </question>
+      <answer>
+        <p>Currently I am not sure, what features I will implement next but I
+        do hope to get some feedback of potential users to see what are the
+        needs of other developers.</p>
+        <p>In my opinion it's e.g. not really necessary to be able to add or
+        remove printers, as this can really easy be managed through the web
+        interface of CUPS but someone might prove that black is white.</p>
+      </answer>
+    </faq>
+    
+    <faq id="5">
+      <question>
+        DO YOU PLAN TO CREATE A SOURCEFORGE PROJECT FROM THIS?
+      </question>
+      <answer>
+        <p>I do think about it. If there is enough feedback that people need
+        this kind of stuff, sourceforge would be my first choice.</p>
+      </answer>
+    </faq>
+    
+    <faq id="6">
+      <question>
+        HOW CAN I GET IN CONTACT WITH YOU?
+      </question>
+      <answer>
+        <p>Any feedback can be sent to info at cups4j dot org. Alternatively
+        you can leave a message in our <a href="http://cups4j.org/forum">forum</a>.</p>
+      </answer>
+    </faq>
+    
+     <faq id="7">
+      <question>
+        HOW CAN I QUERY FOR PRINTER ATTRIBUTES AND CAPABILITIES ?
+      </question>
+      <answer>
+        <p>First you have to build cups4j (if not already done) :
+        <source>mvn package</source>
+        </p>
+        <p>Next, just run and you will have a window (Swing/JGoodies) prompting :
+        
+        <source>java -jar target/cups4j-${cups4j.version}.jar</source>
+        </p>
+      </answer>
+    </faq>
+  </part>
+
+
+</faqs>

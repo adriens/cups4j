@@ -1,0 +1,43 @@
+Build cups4j
+
+* Prerequisites
+
+*---------------------*--------------+----------------------------------------------------------------------:
+| <<Component>>       | <<Version>>  | <<Comments>>                                                         |
+|                     |              |                                                                      |
+*---------------------*--------------+----------------------------------------------------------------------:
+| subversion          |              | To get the sources                                                   |
+*---------------------*--------------+----------------------------------------------------------------------:
+| Java JDK            | 1.7          | To build, do not forget to properly set *JAVA_HOME*                  |
+*---------------------*--------------+----------------------------------------------------------------------:
+| maven 3.x           | 3.*, 3.0.4   | {{{http://maven.apache.org/run-maven/index.html}Properly installed}} |
+*---------------------*--------------+----------------------------------------------------------------------:
+| Internet connection |              | To download dependencies                                             |
+*---------------------*--------------+----------------------------------------------------------------------:
+
+* Build
+    
+    To build cups4j (jar without *and with* dependencies, cups4j.gui tool, javadoc,...) :
+
++-------------------------------------------
+mvn clean
+mvn package
+mvn install
+mvn javadoc:javadoc
++-------------------------------------------
+
+    Once this done (BUILD SUCCESS), you have all proper material
+(documentation, javadoc, site) to use cups4j in a comfortable way.
+
+    Documentation, reports, pdf version of the docs are generated in :
+
++--------------------------------
+target/site
++--------------------------------
+
+    To open generated website, just open :
+
++--------------------------------
+target/site/index.html
++--------------------------------
+

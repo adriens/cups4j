@@ -1,0 +1,188 @@
+Cups4J meets EJB 3.1
+
+    Cups4J can be useful in standalone applications and in enterprise solutions
+as well. As I have lately been playing with EJB 3.1, I'd like to share some
+code that shows basic print server functionality.
+
+    The code provided aims to outline one possible solution for a printing
+system and uses some of the new features in EJB 3.1 supported in
+JBoss 6.0.0.Final. In short words this works like so:
+
+    * Clients sends a print job via rmi
+
+    * PrintService persists print job and sends JMS message that signals a
+new print job
+
+    * JMS message receiver fetches the new print job from the database, sends
+it to CUPS, updates and persists print state
+
+    * Singleton print maintenance bean regularly checks print jobs with non
+final state, updates and persists state.
+
+
+    Currently that's all. Possible extensions/changes to this kind of workflow:
+
+    * Maintain print jobs with recoverable error states like
+ConnectionRefusedExceptions with CUPS so when the CUPS server comes back to
+live again those jobs get printed automatically
+
+    * Remove finished jobs from print job database and signal job completion
+to the enterprise application
+
+    * Expose more of Cups4J functionality to clients like getting printers
+from CUPS servers...
+
+    
+    Probably I am going to update this code to a more realistic solution in future.
+
+
+* What you need to play with this sample:
+
+    Resources :
+
+    * JDK 1.6.x
+
+    * ANT
+
+    * JBoss 6.0.0.Final
+
+    * Cups4J enterprise sample code
+
+        * download Cups4J server part (Eclipse project - but you can also just use ANT)
+
+        * download Cups4J client part (Eclipse project)
+
+Configuration:
+
+    Set JBOSS_HOME environment variable in your system to point to the root directory of JBoss.
+
+
+Deploy the application in JBoss:
+
+    In cups4j-ejb3 project:
+
+    First you need to install a JMS queue in JBoss. If you have a fresh
+installation of JBoss or have never used JMS so far you can just run
+
++---------------------------------------
+ant install-hornetq-jms.xml
++----------------------------------------
+
+
+    otherwise please review
+
++---------------------------------------
+conf/hornetq-jms.xml
++---------------------------------------
+
+    and
+
++---------------------------------------
+${jboss}/server/default/deploy/hornetq/hornetq-jms.xml
++---------------------------------------
+
+    You can just add :
+
++---------------------------------------
+<queue name="printJobQueue">
+<entry name="/queue/printJobQueue"/>
+</queue>
++---------------------------------------
+
+    to
+
++---------------------------------------
+${jboss}/server/default/deploy/hornetq/hornetq-jms.xml
++---------------------------------------
+
+    Now run
+
++---------------------------------------
+ant
++---------------------------------------
+
+    to deploy the application in JBoss. After 30sec. you should see those messages in JBoss.
+
++---------------------------------------
+... PrintJobMaintenance] Starting print job maintenance now... 
+... PrintJobMaintenance] found spooled jobs: 0
+... PrintJobMaintenance] Print job maintenance done.
++---------------------------------------
+
+    Seems everything went well so far. Now Run the test client, but make sure
+to change the printer and print server name in
+
++---------------------------------------
+printJob.setPrinterName("PDF");
+printJob.setPrintServerName("localhost");
++---------------------------------------
+
+    to some names that exists on your CUPS server (see below lines 26/27).
+
+    Also you might want to change
+
++---------------------------------------
+printJob.setUserName("harald");
++---------------------------------------
+    
+    in line 23.
+
+    After printing the client sleeps to show job state transitions.
+That's all for now - have fun!
+
++---------------------------------------
+package org.cups4j.ejb3.client;
+
+import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import javax.naming.InitialContext;
+import org.cups4j.ejb.printing.PrintJob;
+import org.cups4j.ejb.printing.PrintService;
+
+public class Client {
+
+    public static void main(String[] a) throws Exception {
+
+        InitialContext context = new InitialContext();
+
+
+        PrintService printService = 
+        (PrintService)context.lookup("cups4j-ejb/PrintServiceBean/remote");
+        byte[] document = getBytesFromStream(new FileInputStream("resources/cups4j.ps"));
+        PrintJob printJob = new PrintJob();
+        printJob.setUserName("harald");
+        printJob.setDocument(document);
+        printJob.setPrinterName("PDF");
+        printJob.setPrintServerName("localhost");
+
+        Long jobId = printService.print(printJob);
+
+        System.out.println("status for job " + jobId + " ==>> " + printService.getJobState(jobId));
+        System.out.println("sleeping 1 sec.");
+        Thread.sleep(1000);
+
+        System.out.println("status for job " + jobId + " ==>> " + printService.getJobState(jobId));
+        System.out.println("sleeping 30 sec.");
+        Thread.sleep(30000);
+
+        System.out.println("status for job " + jobId + " ==>> " + printService.getJobState(jobId));
+    }
+
+    private static byte[] getBytesFromStream(InputStream in) throws IOException {
+        ByteArrayOutputStream os = null;
+        os = new ByteArrayOutputStream();
+        byte[] buffer = new byte[10000];
+        int i;
+        while ((i = in.read(buffer)) > -1) {
+            os.write(buffer, 0, i);
+        }
+
+        os.flush();
+        os.close();
+        in.close();
+        return os.toByteArray();
+    }
+}
++---------------------------------------

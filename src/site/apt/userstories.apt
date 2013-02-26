@@ -1,0 +1,45 @@
+User stories
+
+    There are not many user stories so far. Users of Cups4J are encouraged to
+provide a short project description to show others what can be done with Cups4J
+and probably provide help in user forums.
+
+* Fiscal authority (Lower Saxony - Germany)
+
+    Fiscal authority (Lower Saxony - Germany) has about 1000+ users working
+with one enterprise application that integrated Cups4J. Users are printing on
+hundreds of printers through distributed CUPS 1.3 servers. About 2000 print
+jobs are processed every day.
+
+* Vanderbilt University Medical Center
+
+    Vanderbilt University Medical Center has two or three hundred printers
+used for remote printing of medical documents, where staff using the printers
+needs to be able to print seamlessly from any workstation to a specific
+printer. CUPS is our remote printing solution, and CUPS4J allowed us an easy
+way to create a service that different applications can call to print documents
+to these printers.  We currently use CUPS4J in our print service to print to
+both 1.2 and 1.3 CUPS servers, as we are transitioning printers from an old
+server to a new one gradually.  We have thousands of print jobs flowing through
+this service and CUPS4J daily.
+
+* Nouméa - New Caledonia
+
+    The {{{http://www.noumea.nc/}Mairie de Nouméa}}, 
+{{{http://en.wikipedia.org/wiki/New_Caledonia}New Caledonia}} has started
+using CUPS4J in its locally developed Human Resources manegement system.
+It is developed under Linux ({{{http://www.ubuntu.com/}Ubuntu}},
+{{{http://www.opensuse.org}Opensuse}}) and deployed under
+{{{http://www.centos.org/}CentOS}} to implement complex Print Jobs of our 
+{{{http://www.eclipse.org/birt/phoenix/}BIRT}} generated pdfs.
+
+    Jobs are scheduled by {{{http://quartz-scheduler.org/}Quartz}}, implemented
+with {{{http://www.springsource.org/spring-roo}Spring Roo}}, the overall is
+running on {{{http://tomcat.apache.org/}Tomcat}} 7.x cluster with JDK 1.7, under
+{{{http://www.centos.org/}CentOS}} (currently 6.3). Eerything is built with
+{{{http://maven.apache.org/}maven}} 3.
+
+    Initially, we wanted to use our already existing Windows 2008 R2 print
+services but as sysadmins reported us that lppr serice  could not be used
+in production because of its instability, it was a great oportunity to go
+on CUPS : we did not miss our chance.

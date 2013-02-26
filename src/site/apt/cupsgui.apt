@@ -1,0 +1,23 @@
+CUPS Gui
+
+    cups-gui is an embedded lightweight tool that helps you
+query for printer attributes and capabilities, in a comfortable
+graphical way.
+
+* CUPS Gui Screenshots (under KDE) :
+
+
+
+[img/cups4j-gui-1.png] Showing Operation Attributes
+
+
+
+[img/cups4j-gui-2.png] Showing Printer Attributes
+
+
+
+[img/cups4j-gui-3.png] Showing unassigned (1/2)
+
+
+
+[img/cups4j-gui-4.png] Showing unassigned (2/2)

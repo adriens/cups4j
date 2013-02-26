@@ -1,0 +1,57 @@
+Latest Maven build
+
+
+
+*-----------*--------------*--------------------------------------------------------------------------------------:
+| <<Date>>  | <<Version>>  | <<Comment>>                                                                          |
+*-----------*--------------:--------------------------------------------------------------------------------------:
+|22/02/2013 |0.6.4         | First mavenized build of cups4j (including cups4j.gui) , site refactoring, reports   |
+*-----------*--------------+--------------------------------------------------------------------------------------|
+
+
+
+
+Legacy Eclipse builds
+
+    Cups4J can be downloaded below.
+
+    The Eclipse project also contains a build file for ant. So you don't need
+to use Eclipse to get started. Just uncompress the file and run ANT. After
+ANT completed successfully you will find the following files in the dist directory:
+
+    * the file you just downloaded: cups4j.eclipse.zip
+
+    * the library without dependencies: cups4j.jar
+
+    * the library with all dependencies for Java 6 wich is also runnable  :(java -jar  cups4j.runnable.jar or on Linux systems with IPv6 troubles: java -Djava.net.preferIPv4Stack=true -jar cups4j.runnable.jar)
+
+    * java docs: cups4j.javadocs.zip
+
+    * sources: cups4j.src.jar
+
+Downloads
+
+    If you don't need the whole project, you can download the library with or without dependencies.
+
+    
+
+*-----------*--------------+------------------------------------------------------------------------------+------------------------------------------------------------------------------+--------------------------------------------------------------------+-------------------------------------------------------------------------------------:
+| <<Date>>  | <<Ver.>>      | <<Project>>                                                                 | <<Jar with dependencies>>                                                    | <<Jar without dependencies>>                                  | <<Javadoc>>                                                                              |
+*-----------*--------------+------------------------------------------------------------------------------+------------------------------------------------------------------------------+--------------------------------------------------------------------+-------------------------------------------------------------------------------------:
+|22/02/2013 |0.6.4         | First mavenized build                                                        |                                                                              |                                                                    |                                                                                     |
+*-----------*--------------+------------------------------------------------------------------------------+------------------------------------------------------------------------------+--------------------------------------------------------------------+-------------------------------------------------------------------------------------:
+|11/05/2012 |0.6.3         | {{{http://cups4j.org/downloads/cups4j.eclipse-0.6.3.zip}eclipse-0.6.3.zip}}  | {{{http://cups4j.org/downloads/cups4j.runnable-0.6.3.jar}runnable-0.6.3.jar}}| {{{http://cups4j.org/downloads/cups4j-0.6.3.jar}cups4j-0.6.3.jar}} | {{{http://cups4j.org/downloads/cups4j.javadocs-0.6.3.zip}javadocs-0.6.3.zip}}|
+*-----------*--------------+-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+--------------------------------------------------------------------+-------------------------------------------------------------------------------------:
+|19/11/2011 |0.6.2         | {{{http://cups4j.org/downloads/cups4j.eclipse-0.6.2.zip}eclipse-0.6.2.zip}}  | {{{http://cups4j.org/downloads/cups4j.runnable-0.6.2.jar}runnable-0.6.2.jar}}| {{{http://cups4j.org/downloads/cups4j-0.6.2.jar}cups4j-0.6.2.jar}} | {{{http://cups4j.org/downloads/cups4j.javadocs-0.6.2.zip}javadocs-0.6.2.zip}}|
+*-----------*--------------+-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+--------------------------------------------------------------------+-------------------------------------------------------------------------------------:
+|01/06/2011 |0.6.1         | {{{http://cups4j.org/downloads/cups4j.eclipse-0.6.1.zip}eclipse-0.6.1.zip}}  | {{{http://cups4j.org/downloads/cups4j.runnable-0.6.1.jar}runnable-0.6.1.jar}}| {{{http://cups4j.org/downloads/cups4j-0.6.1.jar}cups4j-0.6.1.jar}} | {{{http://cups4j.org/downloads/cups4j.javadocs-0.6.1.zip}javadocs-0.6.1.zip}}|
+*-----------*--------------+-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+--------------------------------------------------------------------+-------------------------------------------------------------------------------------:
+|01/04/2011 |0.6.0         | {{{http://cups4j.org/downloads/cups4j.eclipse-0.6.0.zip}eclipse-0.6.0.zip}}  | {{{http://cups4j.org/downloads/cups4j.runnable-0.6.0.jar}runnable-0.6.0.jar}}| {{{http://cups4j.org/downloads/cups4j-0.6.0.jar}cups4j-0.6.0.jar}} | {{{http://cups4j.org/downloads/cups4j.javadocs-0.6.0.zip}javadocs-0.6.0.zip}}|
+*-----------*--------------+-------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+--------------------------------------------------------------------+-------------------------------------------------------------------------------------:
+|08/11/2010 |0.5.0         | {{{http://cups4j.org/downloads/cups4j.eclipse-0.5.0.zip}eclipse-0.5.0.zip}}  | {{{http://cups4j.org/downloads/cups4j.runnable-0.5.0.jar}runnable-0.5.0.jar}}| {{{http://cups4j.org/downloads/cups4j-0.5.0.jar}cups4j-0.5.0.jar}} | {{{http://cups4j.org/downloads/cups4j.javadocs-0.5.0.zip}javadocs-0.5.0.zip}}|
+*-----------*--------------+------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+--------------------------------------------------------------------+-------------------------------------------------------------------------------------:
+
+Query for printer attributes and capabilities
+
+    Small Swing ({{{http://www.jgoodies.com/freeware/libraries/forms/}JGoodies}}) application provided as Eclipse project. Download from
+{{{http://cups4j.org/downloads/cups4j.gui.zip}here}}.

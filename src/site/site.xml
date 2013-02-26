@@ -1,0 +1,71 @@
+
+<project name="cups4j" xmlns="http://maven.apache.org/DECORATION/1.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd">
+   <!--
+   <bannerLeft>
+    <name>CUPS4J</name>
+    <src>img/cups4j-logo.jpg</src>
+    <href>http://cups4j.org/</href>
+  </bannerLeft>
+-->
+  <bannerRight>
+    <src>img/cups4j-banner.jpg</src>
+    <name>CUPS4J</name>
+        <href>http://cups4j.org</href>
+        <title>CUPS4J</title>
+  </bannerRight>
+  
+  
+    <skin>
+        <groupId>org.apache.maven.skins</groupId>
+        <artifactId>maven-fluido-skin</artifactId>
+        <version>1.2.1</version>
+    </skin>
+    <custom>
+        <fluidoSkin>
+            <sideBarEnabled>true</sideBarEnabled>
+            <googlePlusOne />
+        </fluidoSkin>
+    </custom>
+
+
+    <body>
+        
+        <!--
+        <breadcrumbs>
+            <item name="cups4j" href="http://cups4j.org/"/>
+            <item name="forum" href="http://cups4j.org/forum/"/>
+            <item name="CUPS" href="http://www.cups.org"/>
+        </breadcrumbs>
+    -->
+    
+        <links>
+            <item name="cups4j" href="http://cups4j.org/"/>
+            <item name = "forum" href="http://cups4j.org/forum/"/>
+            <item name="CUPS" href="http://www.cups.org"/>
+            <item name="CUPS (conf)" href="http://www.cups.org/documentation.php/ref-cupsd-conf.html"/>
+        </links>
+
+        <menu name="MAIN MENU">
+            <item name="Overview" href="overview.html"/>
+            <item name="FAQs" href="faqs.html"/>
+            <item name="User stories" href="userstories.html"/>
+            <item name="Cups4J meets EJB 3.1"  href="cups4jmeetsejb.html"/>
+            <item name="Build It" href="build.html"/>
+            <item name="Download" href="downloads.html"/>
+            <item name="CUPS gui" href="cupsgui.html"/>
+            <!--
+            <item name="" href=".html"/>
+            <item name="FAQ" href="faq.html"/>
+            -->
+        </menu>
+        
+               
+        <menu name = "USER LOGIN">
+            <item name="User Login" href="http://cups4j.org/index.php?option=com_user&amp;view=login&amp;Itemid=14"/>
+        </menu>
+
+        <menu ref="reports"/>
+    </body>
+</project>
