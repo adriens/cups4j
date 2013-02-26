@@ -1,20 +1,13 @@
 package ch.ethz.vppserver.ippclient;
 
+import ch.ethz.vppserver.schema.ippclient.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.xml.bind.JAXBException;
-
-import ch.ethz.vppserver.schema.ippclient.Attribute;
-import ch.ethz.vppserver.schema.ippclient.AttributeGroup;
-import ch.ethz.vppserver.schema.ippclient.AttributeValue;
-import ch.ethz.vppserver.schema.ippclient.Enum;
-import ch.ethz.vppserver.schema.ippclient.SetOfEnum;
-import ch.ethz.vppserver.schema.ippclient.Tag;
 
 /**
  * Copyright (C) 2008 ITS of ETH Zurich, Switzerland, Sarah Windler Burri
@@ -751,10 +744,10 @@ public class IppResponse {
             AttributeValue attributeValue = attributeValueList.get(z);
             if (attributeValue.getSetOfEnum() != null) {
               SetOfEnum setOfEnum = attributeValue.getSetOfEnum();
-              List<Enum> enumList = setOfEnum.getEnum();
+              List<ch.ethz.vppserver.schema.ippclient.Enum> enumList = setOfEnum.getEnum();
               int llll = enumList.size();
               for (int w = 0; w < llll; w++) {
-                Enum enumEntry = enumList.get(w);
+                ch.ethz.vppserver.schema.ippclient.Enum enumEntry = enumList.get(w);
                 String enumValueString = enumEntry.getValue();
                 int enumValue = 0;
                 // some IPP enumerations are in hex, other decimal
