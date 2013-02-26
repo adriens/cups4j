@@ -8,8 +8,21 @@
     </properties>
     <body>
       
+        <release version="0.6.5" date="2013-02-26"
+                 description="Ant tasks added, ...">
+            <action dev="adrien" type="add">
+                Added ant build file to make launchers easier to run.
+            </action>
+            
+            <action dev="adrien" type="add">
+                Added ant build file to make localhost PrintAttributes ant-compliant.
+            </action>
+            
+        </release>
+               
+               
         <release version="0.6.4" date="2013-02-22"
-               description="Mavenization and site re-creation">
+                 description="Mavenization and site re-creation">
             <action dev="adrien" type="add">
                 Project build mavenized.
             </action>
