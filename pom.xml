@@ -5,7 +5,7 @@
 
     <groupId>cups4j</groupId>
     <artifactId>cups4j</artifactId>
-    <version>0.6.4</version>
+    <version>0.6.5</version>
     <packaging>jar</packaging>
     <url>http://cups.org</url>
     <name>cups4j</name>
