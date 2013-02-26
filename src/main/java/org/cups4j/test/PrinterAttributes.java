@@ -10,7 +10,6 @@ import java.awt.*;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-// TODO Remove Vector as it is now an obsolete Collection
 import java.util.Vector;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
