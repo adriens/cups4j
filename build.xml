@@ -21,7 +21,7 @@
          <classpath>
            <pathelement location="target/cups4j-${pom.version}.jar"/>
          </classpath>
-             <arg value="adrien"/>
+             <arg value="cups4j"/>
        </java>
     </target>
     
