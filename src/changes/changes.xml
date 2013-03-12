@@ -17,6 +17,25 @@
             <action dev="adrien" type="add">
                 Added ant build file to make localhost PrintAttributes ant-compliant.
             </action>
+            <action dev="adrien" type="add">
+                Added Log4j dependency to make more usable logs
+            </action>
+            <action dev="adrien" type="add">
+                Added Joda Time dependency to deal with dates in an easier way.
+            </action>
+            <action dev="adrien" type="add">
+                Added toString functions to PrintJobAttributes to make text outputs easier to read (textile output).
+            </action>
+            <action dev="adrien" type="add">
+                Added helper getters to PrintJobAttributes to get Dates, and other infos that are null if no client is provided (nb pages, ...).
+            </action>
+            <action dev="adrien" type="add">
+                Added  PrinterList and cups.report.redmine ant task to make report
+                on cups server easier.
+            </action>
+            
+            
+            
             
         </release>
                
