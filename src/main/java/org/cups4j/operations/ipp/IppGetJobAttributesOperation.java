@@ -24,11 +24,15 @@ import java.nio.ByteBuffer;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import org.apache.log4j.Logger;
 import org.cups4j.JobStateEnum;
 import org.cups4j.PrintJobAttributes;
 import org.cups4j.operations.IppOperation;
 
+
 public class IppGetJobAttributesOperation extends IppOperation {
+    
+    static Logger logger = Logger.getLogger(IppGetJobAttributesOperation.class.getName());
 
   public IppGetJobAttributesOperation() {
     operationID = 0x0009;
@@ -122,7 +126,7 @@ public class IppGetJobAttributesOperation extends IppOperation {
             } else if ("job-id".equals(attr.getName())) {
               job.setJobID(Integer.parseInt(attValue));
             } else if ("job-state".equals(attr.getName())) {
-              System.out.println("job-state "+ attValue);
+              logger.debug("job-state "+ attValue);
               job.setJobState(JobStateEnum.fromString(attValue));
             } else if ("job-printer-uri".equals(attr.getName())) {
               job.setPrinterURL(new URL(attValue.replace("ipp://", "http://")));
