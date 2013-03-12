@@ -15,7 +15,12 @@ import org.cups4j.WhichJobsEnum;
 
 
 /**
- *
+ * An utility class to perform some reporting tasks. For now, it can :
+ * 
+ * <ul>
+ * <li>Report anu cups server jobs and write output in a file, with Textile
+ * Markup language.</li>
+ * </ul>
  * @author Adrien SALES (Adrien.Sales@gmail.com)
  */
 public class PrinterList {
