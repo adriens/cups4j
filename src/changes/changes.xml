@@ -33,6 +33,13 @@
                 Added  PrinterList and cups.report.redmine ant task to make report
                 on cups server easier.
             </action>
+            <action dev="adrien" type="add">
+                Removed as much System.out and System.err as possible and
+                replaced them by log4j log statements.
+            </action>
+            <action dev="adrien" type="add">
+                Added logos to user stories.
+            </action>
             
             
             
