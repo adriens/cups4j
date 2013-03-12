@@ -60,7 +60,7 @@
            fork="true"
            failonerror="true"
            maxmemory="128m"
-		   classname="org.cups4j.test.PrinterList"
+		   classname="org.cups4j.utils.PrinterList"
            >
          <arg value="${host}"/>
          <arg value="${port}"/>
