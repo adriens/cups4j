@@ -12,6 +12,7 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
+import org.apache.log4j.Logger;
 
 /**
  * Copyright (C) 2008 ITS of ETH Zurich, Switzerland, Sarah Windler Burri
@@ -30,6 +31,8 @@ import javax.xml.bind.Unmarshaller;
  * program; if not, see <http://www.gnu.org/licenses/>.
  */
 public class IppJaxb {
+    static Logger logger = Logger.getLogger(IppJaxb.class.getName());
+    
   private final static String TAG_LIST_FILENAME = "config/ippclient/ipp-list-of-tag.xml";
   private final static String ATTRIBUTE_LIST_FILENAME = "config/ippclient/ipp-list-of-attributes.xml";
   private final static String CONTEXT = "ch.ethz.vppserver.schema.ippclient";
@@ -50,11 +53,11 @@ public class IppJaxb {
 
   public void marshal(Object root, String filename) throws JAXBException, FileNotFoundException {
     if (root == null) {
-      System.err.println("IppJaxb.marshal(): root is null");
+      logger.error("IppJaxb.marshal(): root is null");
       return;
     }
     if (filename == null) {
-      System.err.println("IppJaxb.marshal(): filename is null");
+      logger.error("IppJaxb.marshal(): filename is null");
       return;
     }
 
@@ -62,7 +65,8 @@ public class IppJaxb {
     if (packName.indexOf('.') != -1) {
       packName = packName.substring(0, packName.lastIndexOf('.'));
     }
-
+    
+    
     JAXBContext jc = JAXBContext.newInstance(packName);
     Marshaller m = jc.createMarshaller();
     m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
