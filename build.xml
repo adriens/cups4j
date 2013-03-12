@@ -4,13 +4,15 @@
     default="pom.load"
     xmlns:artifact="antlib:org.apache.maven.artifact.ant"
     >
+	
     <!-- Add Maven Ant Tasks -->
     <path id="maven-ant-tasks.classpath" path="lib/maven-ant-tasks-2.1.3.jar" />
     <typedef resource="org/apache/maven/artifact/ant/antlib.xml"
              uri="antlib:org.apache.maven.artifact.ant"
              classpathref="maven-ant-tasks.classpath" />
 
-    <target name = "pom.load" description = "Loads pom in ant">
+	<!-- Loads pom in ant -->
+    <target name = "pom.load">
         <artifact:pom id="pom" file="pom.xml" />
         <echo>cups4j version : ${pom.version}</echo>
     </target>
@@ -25,7 +27,8 @@
        </java>
     </target>
     
-    <target name = "printer-attributes.localhost"
+    <!--
+	<target name = "printer-attributes.localhost"
             description="Launches GUI to show localhost printers attributes"
             depends="pom.load">
         <java classname="org.cups4j.test.PrinterAttributes" fork="true">
@@ -33,6 +36,88 @@
            <pathelement location="target/cups4j-${pom.version}.jar"/>
          </classpath>
        </java>
-        
     </target>
+	-->
+    <!--<target name = "printer-list"
+            description="Launches GUI to show given host printers attributes"
+            depends="pom.load">
+        <java classname="org.cups4j.test.PrinterList">
+         <classpath>
+           <pathelement location="target/cups4j-${pom.version}.jar"/>
+         </classpath>
+         <arg value="172.16.24.131"/>
+       </java>
+    </target>
+	-->
+	<!--
+	<target name="tasks.hello" depends="pom.load">
+		<taskdef name="TextileReport" classname="org.cups4j.tasks.TextileReport" classpath="target/cups4j-${pom.version}.jar"/>
+		<TextileReport host="172.16.24.131" port="631" which="ALL" user="" myjobs="true" filename="test.txt"/>
+	</target>
+	-->
+	<target name="cups.report.redmine.params" depends="pom.load">
+		<java 
+           fork="true"
+           failonerror="true"
+           maxmemory="128m"
+		   classname="org.cups4j.test.PrinterList"
+           >
+         <arg value="${host}"/>
+         <arg value="${port}"/>
+         <arg value="${which}"/>
+         <arg value="${user}"/>
+         <arg value="${myjobs}"/>
+         <arg value="${filename}"/>
+         <classpath>
+           <pathelement location="target/cups4j-${pom.version}.jar"/>
+         </classpath>
+       </java>
+	</target>
+	
+	<target name = "cups.report.redmine.menu">
+		<input message="host" addproperty="host" defaultvalue="localhost" />
+		<input message="port" addproperty="port" defaultvalue="631" />
+		<input message="which" addproperty="which" validargs="ALL,COMPLETED,NOT_COMPLETED" defaultvalue="NOT_COMPLETED" />
+		<input message="user" addproperty="user" defaultvalue="all"/>
+		<input message="myjobs" addproperty="myjobs" validargs="true,false"  defaultvalue="true" />
+		<input message="filename" addproperty="filename" defaultvalue="cups-report.txt" />
+	</target>
+	
+	<target name="cups.report.redmine" depends="cups.report.redmine.menu,cups.report.redmine.params" description = "Create comprehensive Jobs report"/>
+
+
 </project>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
