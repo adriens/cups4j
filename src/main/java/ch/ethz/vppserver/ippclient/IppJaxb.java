@@ -83,7 +83,7 @@ public class IppJaxb {
    */
   public Object unmarshal(InputStream inputStream, String context) throws JAXBException, FileNotFoundException {
     if (inputStream == null) {
-      System.err.println("IppJaxb.unmarshal(): inputStream is null");
+      logger.error("IppJaxb.unmarshal(): inputStream is null");
       return null;
     }
     if (context == null) {

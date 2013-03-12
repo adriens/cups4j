@@ -34,6 +34,7 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.InputStreamEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
+import org.apache.log4j.Logger;
 import org.cups4j.CupsClient;
 
 public abstract class IppOperation {
@@ -42,6 +43,8 @@ public abstract class IppOperation {
   protected int ippPort = CupsClient.DEFAULT_PORT;
 
   private final static String IPP_MIME_TYPE = "application/ipp";
+  
+  static Logger logger = Logger.getLogger(IppOperation.class.getName());
 
   //
   String httpStatusLine = null;
@@ -75,7 +78,7 @@ public abstract class IppOperation {
    */
   public ByteBuffer getIppHeader(URL url, Map<String, String> map) throws UnsupportedEncodingException {
     if (url == null) {
-      System.err.println("IppOperation.getIppHeader(): uri is null");
+      logger.error("IppOperation.getIppHeader(): uri is null");
       return null;
     }
 

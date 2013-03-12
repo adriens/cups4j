@@ -17,6 +17,7 @@ package org.cups4j;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.Map;
+import org.apache.log4j.Logger;
 
 /**
  * Print job class
@@ -47,6 +48,7 @@ public class PrintJob {
    * </p>
    */
   public static class Builder {
+    static Logger logger = Logger.getLogger(Builder.class.getName());
     private InputStream document;
     private int copies = 1;
     private String pageRanges = null;;

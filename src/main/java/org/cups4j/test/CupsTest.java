@@ -19,10 +19,12 @@ import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
+import org.apache.log4j.Logger;
 import org.cups4j.*;
 
 public class CupsTest {
 
+    static Logger logger = Logger.getLogger(CupsTest.class.getName());
 	/**
 	 * @param args
 	 * @throws FileNotFoundException
@@ -84,7 +86,7 @@ public class CupsTest {
 				getJobs(host, userName, printerName);
 			}
 		} catch (Exception e) {
-			System.err.println(e.getMessage());
+			logger.error(e.getMessage());
 		}
 	}
 
@@ -115,7 +117,7 @@ public class CupsTest {
 				printerName, false), WhichJobsEnum.ALL, userName, myJobs);
 
 		for (PrintJobAttributes a : jobs) {
-			System.out.println("job: " + a.getJobID() + " " + a.getJobName()
+			logger.info("job: " + a.getJobID() + " " + a.getJobName()
 					+ " " + a.getJobState() + " " + a.getPrinterURL() + " "
 					+ a.getUserName());
 		}
@@ -152,17 +154,17 @@ public class CupsTest {
 		if (printRequestResult.isSuccessfulResult()) {
 			int jobID = printRequestResult.getJobId();
 
-			System.out.println("file sent to " + printer.getPrinterURL()
+			logger.info("file sent to " + printer.getPrinterURL()
 					+ " jobID: " + jobID);
-			System.out.println("... current status = "
+			logger.info("... current status = "
 					+ printer.getJobStatus(jobID));
 			Thread.sleep(1000);
-			System.out.println("... status after 1 sec. = "
+			logger.info("... status after 1 sec. = "
 					+ printer.getJobStatus(jobID));
 
-			System.out.println("Get last Printjob");
+			logger.info("Get last Printjob");
 			PrintJobAttributes job = cupsClient.getJobAttributes(host, jobID);
-			System.out.println("ID: " + job.getJobID() + " user: "
+			logger.info("ID: " + job.getJobID() + " user: "
 					+ job.getUserName() + " url: " + job.getJobURL()
 					+ " status: " + job.getJobState());
 		} else {
@@ -178,7 +180,7 @@ public class CupsTest {
 
 	private static void listPrintersOnHost(String hostname) throws Exception {
 
-		System.out.println("List printers on " + hostname + ":");
+		logger.info("List printers on " + hostname + ":");
 		List<CupsPrinter> printers = null;
 		long timeoutTime = System.currentTimeMillis() + 10000;
 		while (System.currentTimeMillis() < timeoutTime && printers == null) {
@@ -187,7 +189,7 @@ public class CupsTest {
 						CupsClient.DEFAULT_PORT);
 				printers = cupsClient.getPrinters();
 			} catch (Exception e) {
-				System.out.println("could not get printers... retrying");
+				logger.error("could not get printers... retrying");
 			}
 		}
 
@@ -197,9 +199,9 @@ public class CupsTest {
 		}
 
 		for (CupsPrinter p : printers) {
-			System.out.println(p);
+			logger.info(p);
 		}
-		System.out.println("----\n");
+		logger.info("----\n");
 	}
 
 	private static void usage() {

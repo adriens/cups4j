@@ -21,12 +21,15 @@ import java.net.URL;
 import java.nio.ByteBuffer;
 import java.util.HashMap;
 import java.util.Map;
+import org.apache.log4j.Logger;
 import org.cups4j.CupsClient;
 import org.cups4j.PrintRequestResult;
 import org.cups4j.operations.IppOperation;
 
 public class IppReleaseJobOperation extends IppOperation {
 
+  static Logger logger = Logger.getLogger(IppReleaseJobOperation.class.getName());
+    
   public IppReleaseJobOperation() {
     operationID = 0x000D;
     bufferSize = 8192;
@@ -53,7 +56,7 @@ public class IppReleaseJobOperation extends IppOperation {
 
   public ByteBuffer getIppHeader(URL uri, Map<String, String> map) throws UnsupportedEncodingException {
     if (uri == null) {
-      System.err.println("IppReleaseJobOperation.getIppHeader(): uri is null");
+      logger.error("IppReleaseJobOperation.getIppHeader(): uri is null");
       return null;
     }
 

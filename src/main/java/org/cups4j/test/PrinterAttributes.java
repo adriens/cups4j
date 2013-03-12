@@ -15,6 +15,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 import javax.swing.table.TableModel;
+import org.apache.log4j.Logger;
 import org.cups4j.CupsClient;
 import org.cups4j.CupsPrinter;
 import org.cups4j.operations.ipp.IppGetPrinterAttributesOperation;
@@ -22,6 +23,7 @@ import org.cups4j.operations.ipp.IppGetPrinterAttributesOperation;
 public class PrinterAttributes {
   private JTabbedPane mainTab = new JTabbedPane();
   private String hostname = "localhost";
+  static Logger logger = Logger.getLogger(PrinterAttributes.class.getName());
 
   public static void main(String[] args) {
     PrinterAttributes pattr = new PrinterAttributes((args.length > 0) ? args[0] : null);
@@ -52,7 +54,7 @@ public class PrinterAttributes {
       frame.setVisible(true);
     } catch (Exception e) {
       // TODO Auto-generated catch block
-      System.err.println(e.getMessage());
+      logger.error(e.getMessage());
     }
   }
 

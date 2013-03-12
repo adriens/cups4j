@@ -19,6 +19,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+import org.apache.log4j.Logger;
 import org.cups4j.CupsClient;
 import org.cups4j.CupsPrinter;
 import org.cups4j.PrintJob;
@@ -28,6 +29,9 @@ import org.cups4j.PrintJob;
  * @author Adrien SALES
  */
 public class PrintCups4jPdfDoc {
+    
+    static Logger logger = Logger.getLogger(PrintCups4jPdfDoc.class.getName());
+    
     public static void main(String[] args) {
         // TODO code application logic here
         try {
@@ -40,7 +44,7 @@ public class PrintCups4jPdfDoc {
             
             // Passing by the url version
             CupsPrinter cp = cc.getPrinter(new URL("http://" + host + ":" + port + "/printers/IM1058"));
-            System.out.println("Printer url : " + cp.getPrinterURL());
+            logger.info("Printer url : " + cp.getPrinterURL());
             
             
             cp.setDescription("Some dedicated printer");
@@ -64,7 +68,7 @@ public class PrintCups4jPdfDoc {
             cp.print(pj);
             System.exit(0);            
         } catch (Exception ex) {
-            System.err.println(ex.getMessage());
+            logger.error(ex.getMessage());
             System.exit(1);
         }
     }

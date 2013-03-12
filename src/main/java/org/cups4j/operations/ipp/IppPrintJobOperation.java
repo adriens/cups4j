@@ -19,10 +19,13 @@ import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.util.Map;
+import org.apache.log4j.Logger;
 import org.cups4j.operations.IppOperation;
 
 public class IppPrintJobOperation extends IppOperation {
 
+    static Logger logger = Logger.getLogger(IppPrintJobOperation.class.getName());
+    
   public IppPrintJobOperation() {
     operationID = 0x0002;
     bufferSize = 8192;
@@ -47,7 +50,7 @@ public class IppPrintJobOperation extends IppOperation {
 
   public ByteBuffer getIppHeader(URL url, Map<String, String> map) throws UnsupportedEncodingException {
     if (url == null) {
-      System.err.println("IppPrintJobOperation.getIppHeader(): uri is null");
+      logger.error("IppPrintJobOperation.getIppHeader(): uri is null");
       return null;
     }
 
@@ -127,7 +130,7 @@ public class IppPrintJobOperation extends IppOperation {
   private static ByteBuffer getJobAttributes(ByteBuffer ippBuf, String[] attributeBlocks)
       throws UnsupportedEncodingException {
     if (ippBuf == null) {
-      System.err.println("IppPrintJobOperation.getJobAttributes(): ippBuf is null");
+      logger.error("IppPrintJobOperation.getJobAttributes(): ippBuf is null");
       return null;
     }
     if (attributeBlocks == null) {
