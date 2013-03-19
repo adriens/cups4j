@@ -17,7 +17,13 @@ package org.cups4j;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.Map;
-import org.apache.log4j.Logger;
+import org.apache.commons.vfs2.FileObject;
+import org.apache.commons.vfs2.FileSystemException;
+import org.apache.commons.vfs2.FileSystemManager;
+import org.apache.commons.vfs2.VFS;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 /**
  * Print job class
@@ -48,7 +54,7 @@ public class PrintJob {
    * </p>
    */
   public static class Builder {
-    static Logger logger = Logger.getLogger(Builder.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(Builder.class);
     private InputStream document;
     private int copies = 1;
     private String pageRanges = null;;
@@ -66,6 +72,48 @@ public class PrintJob {
     public Builder(byte[] document) {
       this.document = new ByteArrayInputStream(document);
     }
+    
+    /**
+     * Constructor to print a <b>single file</b>, relying on commonVFS
+     * See <a href="http://commons.apache.org/proper/commons-vfs//filesystems.html">
+     * Common-VFS</a> for examples.
+     * 
+     * @param String The commonVFS URI of the file to print
+     * 
+     */
+    public Builder(String commonVFSURI) throws Exception{
+      //this.document = new ByteArrayInputStream(document);
+        try{
+            logger.debug("Trying to build FileSystem Manager ...");
+            FileSystemManager fsManager = VFS.getManager();
+            logger.debug("FileSystem Manager built.");
+            logger.debug("Resolving fileobject <" + commonVFSURI + ">...");
+            FileObject fo = fsManager.resolveFile(commonVFSURI);
+            logger.debug("Fileobject successfully built.");
+           this.document = fo.getContent().getInputStream();
+                /*
+                 * int nbChildren = fo.getChildren().length;
+                if(nbChildren > 1){
+                    String msg = "Cannot deal with multiple childs. Provide url that matches single file";
+                    logger.warn(msg);
+                    throw new Exception(msg);
+                }
+                else{
+                    logger.debug("Single Child found : <" + fo.getURL() + ">");
+                    //this.document = fo.getContent().
+                    logger.debug("Feeding stream in document ...");
+                    this.document = fo.getContent().getInputStream();
+                    logger.debug("Document feed with stream.");
+                }
+                * */
+        
+           }
+        catch(FileSystemException ex){
+            logger.error("Unable to mount Virtual Filesystem Manager : " + ex.getMessage());
+            throw ex;
+        }
+        
+        }
 
     /**
      * Constructor

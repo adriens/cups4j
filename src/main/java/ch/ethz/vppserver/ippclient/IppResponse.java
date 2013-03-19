@@ -8,7 +8,9 @@ import java.nio.channels.SocketChannel;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.JAXBException;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 /**
  * Copyright (C) 2008 ITS of ETH Zurich, Switzerland, Sarah Windler Burri
@@ -40,7 +42,7 @@ public class IppResponse {
   private List<AttributeGroup> _result = null;
 
   private static IppJaxb ippJaxb = null;
-  static Logger logger = Logger.getLogger(IppResponse.class.getName());
+  private static final Logger logger = LoggerFactory.getLogger(IppResponse.class);
 
   // read IPP response in global buffer
   ByteBuffer _buf = null;

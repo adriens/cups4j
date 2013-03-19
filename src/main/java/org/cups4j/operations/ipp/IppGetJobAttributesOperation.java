@@ -24,15 +24,16 @@ import java.nio.ByteBuffer;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import org.apache.log4j.Logger;
 import org.cups4j.JobStateEnum;
 import org.cups4j.PrintJobAttributes;
 import org.cups4j.operations.IppOperation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 public class IppGetJobAttributesOperation extends IppOperation {
     
-    static Logger logger = Logger.getLogger(IppGetJobAttributesOperation.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(IppGetJobAttributesOperation.class);
 
   public IppGetJobAttributesOperation() {
     operationID = 0x0009;

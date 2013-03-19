@@ -26,11 +26,13 @@ import org.cups4j.operations.IppOperation;
 
 import ch.ethz.vppserver.ippclient.IppResult;
 import ch.ethz.vppserver.ippclient.IppTag;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 public class IppHoldJobOperation extends IppOperation {
 
-    static Logger logger = Logger.getLogger(IppHoldJobOperation.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(IppHoldJobOperation.class);
     
   public IppHoldJobOperation() {
     operationID = 0x000C;

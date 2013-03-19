@@ -22,16 +22,17 @@ import java.util.Map;
 
 import org.cups4j.CupsPrinter;
 import org.cups4j.operations.IppOperation;
-import org.cups4j.util.IppResultPrinter;
 
 import ch.ethz.vppserver.ippclient.IppResult;
 import ch.ethz.vppserver.schema.ippclient.Attribute;
 import ch.ethz.vppserver.schema.ippclient.AttributeGroup;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 public class CupsGetPrintersOperation extends IppOperation {
     
-  static Logger logger = Logger.getLogger(CupsGetPrintersOperation.class.getName());
+  private static final Logger logger = LoggerFactory.getLogger(CupsGetPrintersOperation.class);
     
   public CupsGetPrintersOperation() {
     operationID = 0x4002;

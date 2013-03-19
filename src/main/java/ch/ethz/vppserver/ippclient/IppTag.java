@@ -2,7 +2,9 @@ package ch.ethz.vppserver.ippclient;
 
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 /**
  * Copyright (C) 2008 ITS of ETH Zurich, Switzerland, Sarah Windler Burri
@@ -60,7 +62,7 @@ public class IppTag {
   private static int requestID = 0; // required attribute within operations (will increase with
                                     // every request)
   
-  static Logger logger = Logger.getLogger(IppTag.class.getName());
+  private static final Logger logger = LoggerFactory.getLogger(IppTag.class);
 
   /**
    * 

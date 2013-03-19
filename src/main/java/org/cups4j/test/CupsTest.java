@@ -19,12 +19,13 @@ import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
-import org.apache.log4j.Logger;
 import org.cups4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class CupsTest {
 
-    static Logger logger = Logger.getLogger(CupsTest.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(CupsTest.class);
 	/**
 	 * @param args
 	 * @throws FileNotFoundException
@@ -199,7 +200,7 @@ public class CupsTest {
 		}
 
 		for (CupsPrinter p : printers) {
-			logger.info(p);
+			logger.info(p.toString());
 		}
 		logger.info("----\n");
 	}

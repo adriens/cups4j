@@ -7,11 +7,12 @@ package org.cups4j.utils;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.util.List;
-import org.apache.log4j.Logger;
 import org.cups4j.CupsClient;
 import org.cups4j.CupsPrinter;
 import org.cups4j.PrintJobAttributes;
 import org.cups4j.WhichJobsEnum;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 /**
@@ -29,7 +30,7 @@ public class PrinterList {
 public static final String WHICH_COMPLETED = "COMPLETED";
 public static final String WHICH_NOT_COMPLETED = "NOT_COMPLETED";
     
-    static Logger logger = Logger.getLogger(PrinterList.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(PrinterList.class);
     /**
      * Reports Jobs and printers in the file, using <a href="http://en.wikipedia.org/wiki/Textile_(markup_language)">textile Markup Language</a>.
      * useful for example to report them in <a href="http://www.redmine.org/">redmine</a>
@@ -224,7 +225,7 @@ public static final String WHICH_NOT_COMPLETED = "NOT_COMPLETED";
             System.exit(0);
         }
         catch(Exception ex){
-            logger.error(ex);
+            logger.error(ex.getMessage());
         }
     }
     

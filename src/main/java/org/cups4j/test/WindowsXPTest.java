@@ -3,15 +3,16 @@ package org.cups4j.test;
 import ch.ethz.vppserver.ippclient.IppResult;
 import java.io.FileInputStream;
 import java.net.URL;
-import org.apache.log4j.Logger;
 import org.cups4j.CupsPrinter;
 import org.cups4j.PrintJob;
 import org.cups4j.operations.ipp.IppGetPrinterAttributesOperation;
 import org.cups4j.util.IppResultPrinter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class WindowsXPTest {
     
-    static Logger logger = Logger.getLogger(WindowsXPTest.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(WindowsXPTest.class);
     
     
   public static void main(String[] args) {

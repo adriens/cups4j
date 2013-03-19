@@ -21,14 +21,15 @@ import java.net.URL;
 import java.nio.ByteBuffer;
 import java.util.HashMap;
 import java.util.Map;
-import org.apache.log4j.Logger;
 import org.cups4j.CupsClient;
 import org.cups4j.PrintRequestResult;
 import org.cups4j.operations.IppOperation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class IppReleaseJobOperation extends IppOperation {
 
-  static Logger logger = Logger.getLogger(IppReleaseJobOperation.class.getName());
+  private static final Logger logger = LoggerFactory.getLogger(IppReleaseJobOperation.class);
     
   public IppReleaseJobOperation() {
     operationID = 0x000D;

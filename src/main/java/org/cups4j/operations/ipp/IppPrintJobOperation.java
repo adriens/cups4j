@@ -19,12 +19,13 @@ import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.util.Map;
-import org.apache.log4j.Logger;
 import org.cups4j.operations.IppOperation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class IppPrintJobOperation extends IppOperation {
 
-    static Logger logger = Logger.getLogger(IppPrintJobOperation.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(IppPrintJobOperation.class);
     
   public IppPrintJobOperation() {
     operationID = 0x0002;

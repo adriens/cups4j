@@ -19,10 +19,11 @@ package org.cups4j;
  */
 import java.net.URL;
 import java.util.Date;
-import org.apache.log4j.Logger;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.format.ISODateTimeFormat;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Holds print job attributes
@@ -31,7 +32,7 @@ import org.joda.time.format.ISODateTimeFormat;
  */
 public class PrintJobAttributes {
 
-    static Logger logger = Logger.getLogger(PrintJobAttributes.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(PrintJobAttributes.class);
     URL jobURL = null;
     URL printerURL = null;
     int jobID = -1;

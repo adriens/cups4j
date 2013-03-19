@@ -15,15 +15,16 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 import javax.swing.table.TableModel;
-import org.apache.log4j.Logger;
 import org.cups4j.CupsClient;
 import org.cups4j.CupsPrinter;
 import org.cups4j.operations.ipp.IppGetPrinterAttributesOperation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class PrinterAttributes {
   private JTabbedPane mainTab = new JTabbedPane();
   private String hostname = "localhost";
-  static Logger logger = Logger.getLogger(PrinterAttributes.class.getName());
+  private static final Logger logger = LoggerFactory.getLogger(PrinterAttributes.class);
 
   public static void main(String[] args) {
     PrinterAttributes pattr = new PrinterAttributes((args.length > 0) ? args[0] : null);

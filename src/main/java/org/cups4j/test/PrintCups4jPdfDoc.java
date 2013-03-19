@@ -19,10 +19,11 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
-import org.apache.log4j.Logger;
 import org.cups4j.CupsClient;
 import org.cups4j.CupsPrinter;
 import org.cups4j.PrintJob;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
@@ -30,12 +31,12 @@ import org.cups4j.PrintJob;
  */
 public class PrintCups4jPdfDoc {
     
-    static Logger logger = Logger.getLogger(PrintCups4jPdfDoc.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(PrintCups4jPdfDoc.class);
     
     public static void main(String[] args) {
         // TODO code application logic here
         try {
-            String host = "172.16.24.5";
+            String host = "172.16.24.131";
             int port = 631;
             
             CupsClient cc = new CupsClient(host,port);
@@ -43,14 +44,19 @@ public class PrintCups4jPdfDoc {
             
             
             // Passing by the url version
-            CupsPrinter cp = cc.getPrinter(new URL("http://" + host + ":" + port + "/printers/IM1058"));
+            CupsPrinter cp = cc.getPrinter(new URL("http://" + host + ":" + port + "/printers/Printer_SED"));
             logger.info("Printer url : " + cp.getPrinterURL());
             
             
             cp.setDescription("Some dedicated printer");
             
             InputStream is = new FileInputStream("target/site/cups4j.pdf");
-            PrintJob pj = new PrintJob.Builder(is).jobName("cups4j mavenized pdf doc print test.").userName("adrien").build();
+            //PrintJob pj = new PrintJob.Builder(is).jobName("cups4j mavenized pdf doc print test.").userName("adrien").build();
+            // webdav://[ username[: password]@] hostname[: port][ absolute-path]
+            
+            String url ="webdav://admin:admin@172.16.24.131/webdav/EAE_2013_9005125_1939.pdf";
+            PrintJob pj = new PrintJob.Builder(url).jobName("CommonsVFS direct printing test.").userName("adrien").build();
+            
             
             
             // set Job attributes
@@ -66,6 +72,7 @@ public class PrintCups4jPdfDoc {
             pj.setAttributes(attributes);
 
             cp.print(pj);
+            
             System.exit(0);            
         } catch (Exception ex) {
             logger.error(ex.getMessage());

@@ -34,8 +34,9 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.InputStreamEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
-import org.apache.log4j.Logger;
 import org.cups4j.CupsClient;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public abstract class IppOperation {
   protected short operationID = -1; // IPP operation ID
@@ -44,7 +45,7 @@ public abstract class IppOperation {
 
   private final static String IPP_MIME_TYPE = "application/ipp";
   
-  static Logger logger = Logger.getLogger(IppOperation.class.getName());
+  private static final Logger logger = LoggerFactory.getLogger(IppOperation.class);
 
   //
   String httpStatusLine = null;

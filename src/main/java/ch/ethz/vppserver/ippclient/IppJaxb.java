@@ -12,7 +12,9 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 /**
  * Copyright (C) 2008 ITS of ETH Zurich, Switzerland, Sarah Windler Burri
@@ -31,7 +33,7 @@ import org.apache.log4j.Logger;
  * program; if not, see <http://www.gnu.org/licenses/>.
  */
 public class IppJaxb {
-    static Logger logger = Logger.getLogger(IppJaxb.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(IppJaxb.class);
     
   private final static String TAG_LIST_FILENAME = "config/ippclient/ipp-list-of-tag.xml";
   private final static String ATTRIBUTE_LIST_FILENAME = "config/ippclient/ipp-list-of-attributes.xml";
