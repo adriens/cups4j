@@ -17,8 +17,10 @@
                 Direct print files stored through commonVFS url. See new
                 PrintJob.Builder(url) constructor. Things are now as easy as that :
                 
+            
             String url ="webdav://admin:admin@172.16.24.131/webdav/EAE_2013_9005125_1939.pdf";
             PrintJob pj = new PrintJob.Builder(url).jobName("CommonsVFS direct printing test.").userName("adrien").build(); 
+            
             </action>
             
          </release>
