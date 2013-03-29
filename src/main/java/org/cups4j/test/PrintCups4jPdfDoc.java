@@ -34,7 +34,7 @@ public class PrintCups4jPdfDoc {
     public static void main(String[] args) {
         // TODO code application logic here
         try {
-            String host = "172.16.24.131";
+            String host = "172.16.24.5";
             int port = 631;
             
             CupsClient cc = new CupsClient(host,port);
@@ -42,7 +42,7 @@ public class PrintCups4jPdfDoc {
             
             
             // Passing by the url version
-            CupsPrinter cp = cc.getPrinter(new URL("http://" + host + ":" + port + "/printers/Printer_SED"));
+            CupsPrinter cp = cc.getPrinter(new URL("http://" + host + ":" + port + "/printers/COP159"));
             logger.info("Printer url : " + cp.getPrinterURL());
             
             
