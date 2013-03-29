@@ -82,6 +82,26 @@
 		<input message="myjobs" addproperty="myjobs" validargs="true,false"  defaultvalue="true" />
 		<input message="filename" addproperty="filename" defaultvalue="cups-report.txt" />
 	</target>
+        
+        <target name = "cups.print" description = "print a document with commonVFS url" depends="pom.load">
+		<input message="cups host" addproperty="host" defaultvalue="localhost" />
+		<input message="cups port" addproperty="port" defaultvalue="631" />
+		<input message="cups printer name" addproperty="printer_name"/>
+		<input message="Document commonVFS url" addproperty="doc_url"/>
+                <java fork="true" failonerror="true" maxmemory="128m" classname="org.cups4j.utils.PrintOnDemand">
+                    <arg value="${host}"/>
+                    <arg value="${port}"/>
+                    <arg value="${printer_name}"/>
+                    <arg value="${doc_url}"/>
+                    <classpath>
+                    <pathelement location="target/cups4j-${pom.version}.jar"/>
+                </classpath>
+                </java>
+
+	</target>
+        
+        
+        
 	
 	<target name="cups.report.redmine" depends="cups.report.redmine.menu,cups.report.redmine.params" description = "Create comprehensive Jobs report"/>
 
