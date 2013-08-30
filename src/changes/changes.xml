@@ -7,6 +7,22 @@
         <author email="Adrien.Sales@gmail.com">Adrien SALES</author>
     </properties>
     <body>
+      
+      <release version="0.6.8" date="2013-08-30"
+                 description="SLF4J, commonVFS removal, depencies upgrade et maven 3.1 build.">
+            <action dev="adrien" type="add">
+                Removed commonVFS dependency and vfs printing method as requested by Harald.
+            </action>
+            <action dev="adrien" type="add">
+		Upgraded shade and site dependency/plugin.
+            </action>
+	    <action dev="adrien" type="add">
+		Build validated on maven 3.1.
+            </action>
+            
+         </release>
+	 
+	 
         
          <release version="0.6.6" date="2013-03-20"
                  description="SLF4J and commonVFS filesystem printing features.">
