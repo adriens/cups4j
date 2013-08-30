@@ -32,14 +32,7 @@ public class PrintOnDemand {
         setPrinterName(printerName);
         setPrinterUrl("http://" + getHost() + ":" + getPort() + "/printers/" + getPrinterName());
     }
-    
-    public void print(String commonVFSFileUrl)throws Exception{
-        CupsClient cc = new CupsClient(getHost(),getPort());
-        CupsPrinter cp = cc.getPrinter(new URL(getPrinterUrl()));
-        PrintJob pj = new PrintJob.Builder(commonVFSFileUrl).jobName("cups4j CommonsVFS direct printing test.").userName("cups4j").build();
-        cp.print(pj);
-    }
-    
+        
     public static void main (String[] args){
             
         if(args == null){
