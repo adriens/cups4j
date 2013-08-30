@@ -8,6 +8,14 @@
     </properties>
     <body>
       
+      <release version="0.6.9" date="2013-08-30"
+                 description="Removed remaining ref to commonVFS">
+            <action dev="adrien" type="add">
+                Upgraded to 0.6.9 and remove remaining references to commonvfs
+            </action>
+      </release>
+	 
+	 
       <release version="0.6.8" date="2013-08-30"
                  description="SLF4J, commonVFS removal, depencies upgrade et maven 3.1 build.">
             <action dev="adrien" type="add">
