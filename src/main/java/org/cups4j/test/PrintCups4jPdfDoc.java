@@ -14,6 +14,8 @@
  */
 package org.cups4j.test;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
@@ -48,12 +50,12 @@ public class PrintCups4jPdfDoc {
             
             cp.setDescription("Some dedicated printer");
             
-            //InputStream is = new FileInputStream("target/site/cups4j.pdf");
-            //PrintJob pj = new PrintJob.Builder(is).jobName("cups4j mavenized pdf doc print test.").userName("adrien").build();
+            InputStream is = new FileInputStream("target/site/cups4j.pdf");
+            PrintJob pj = new PrintJob.Builder(is).jobName("cups4j mavenized pdf doc print test.").userName("adrien").build();
             // webdav://[ username[: password]@] hostname[: port][ absolute-path]
             
-            String url ="webdav://admin:admin@172.16.24.131/webdav/EAE_2013_9005125_1939.pdf";
-            PrintJob pj = new PrintJob.Builder(url).jobName("CommonsVFS direct printing test.").userName("adrien").build();
+            //String url ="webdav://admin:admin@172.16.24.131/webdav/EAE_2013_9005125_1939.pdf";
+            //PrintJob pj = new PrintJob.Builder(url).jobName("CommonsVFS direct printing test.").userName("adrien").build();
             
             
             
