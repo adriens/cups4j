@@ -30,9 +30,6 @@ public class PrinterAttributes {
     PrinterAttributes pattr = new PrinterAttributes((args.length > 0) ? args[0] : null);
   }
 
-  /**
-   * @param args
-   */
   public PrinterAttributes(String host) {
     try {
       if (host != null)
