@@ -40,6 +40,13 @@
 	    <action dev="adrien" type="update">
 	      Upgraded maven-pmd-plugin to it's latest version, the 3.0.1.
 	    </action>
+            
+            <action dev="adrien" type="update">
+	      In IppOperation, replaced deprecated DefaultHttpClient class with
+                call to HttpClientBuilder. Still, there are a quite important
+                number of deprecated items in IppOperation, see TOTO tag report
+                for more details.
+	    </action>
       </release>
       
       <release version="0.6.9" date="2013-08-30"
