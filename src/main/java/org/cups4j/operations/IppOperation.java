@@ -30,9 +30,10 @@ import org.apache.http.HttpVersion;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.ResponseHandler;
+import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.InputStreamEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 import org.cups4j.CupsClient;
 import org.slf4j.Logger;
@@ -141,7 +142,7 @@ public abstract class IppOperation {
    * @throws Exception
    */
   private IppResult sendRequest(URL url, ByteBuffer ippBuf, InputStream documentStream) throws Exception {
-    IppResult ippResult = null;
+    IppResult ippResult;// = null;
     if (ippBuf == null) {
       return null;
     }
@@ -150,20 +151,26 @@ public abstract class IppOperation {
       return null;
     }
 
-    HttpClient client = new DefaultHttpClient();
+    //HttpClient client = new DefaultHttpClient();
+    // switched to HttpClientBuilder as DefaultHttpClient is deprecated since httpclient 4.3.1
+     HttpClient client = HttpClientBuilder.create().build();
 
     // will not work with older versions of CUPS!
+     //TODO remove deprecated getParams method
     client.getParams().setParameter("http.protocol.version", HttpVersion.HTTP_1_1);
     client.getParams().setParameter("http.socket.timeout", new Integer(10000));
     client.getParams().setParameter("http.connection.timeout", new Integer(10000));
     client.getParams().setParameter("http.protocol.content-charset", "UTF-8");
     client.getParams().setParameter("http.method.response.buffer.warnlimit", new Integer(8092));
+    
 
     // probabaly not working with older CUPS versions
+    //TODO remove deprecated getParams method
     client.getParams().setParameter("http.protocol.expect-continue", Boolean.valueOf(true));
 
     HttpPost httpPost = new HttpPost(new URI("http://" + url.getHost() + ":" + ippPort) + url.getPath());
 
+    //TODO remove deprecated getParams method
     httpPost.getParams().setParameter("http.socket.timeout", new Integer(10000));
 
     byte[] bytes = new byte[ippBuf.limit()];
@@ -206,6 +213,7 @@ public abstract class IppOperation {
 
     // IppResultPrinter.print(ippResult);
 
+    //TODO remove deprecated getConnectionManager method
     client.getConnectionManager().shutdown();
     return ippResult;
   }
