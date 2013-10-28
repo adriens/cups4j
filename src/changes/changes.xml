@@ -9,16 +9,36 @@
     <body>
       <release version="0.6.10" date="2013-10-28"
                  description="Dependencies upgrade (logback, joda-time and http-client)">
-            <action dev="adrien" type="add">
+            <action dev="adrien" type="update">
                  Upgraded ch.qos.logback:logback-core from 1.0.9 to 1.0.13, joda-time:joda-time from 2.2 to 2.3 and org.apache.httpcomponents:httpclient from 4.2.3 to 4.3.1.
             </action>
 	    <action dev="adrien" type="add">
                  Completed javadoc so maven report plugin does not complain about malformed javadoc (wrong @param name, non existing params, @return tag with no text, @see with wrong ref,...)
             </action>
 	    
-	    <action dev="adrien" type="add">
+	    <action dev="adrien" type="update">
 	      Upgraded maven-project-info-reports-plugin to 2.7, as recommanded by https://cwiki.apache.org/confluence/display/MAVEN/AetherClassNotFound,
 	      this was causing build errors on maven 3.1.x.
+	    </action>
+	    
+	    <action dev="adrien" type="update">
+	      Upgraded maven-changes-plugin to it's latest version, the 2.9.
+	    </action>
+	    
+	    <action dev="adrien" type="update">
+	      Upgraded maven-javadoc-plugin to it's latest version, the 2.9.1.
+	    </action>
+	    
+	    <action dev="adrien" type="update">
+	      Upgraded maven-checkstyle-plugin to it's latest version, the 2.10.
+	    </action>
+	    
+	    <action dev="adrien" type="update">
+	      Upgraded maven-surefire-report-plugin to it's latest version, the 2.16.
+	    </action>
+	    
+	    <action dev="adrien" type="update">
+	      Upgraded maven-pmd-plugin to it's latest version, the 3.0.1.
 	    </action>
       </release>
       
