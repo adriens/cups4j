@@ -24,7 +24,7 @@ public class IppResultPrinter {
   /**
    * Print IPP response to standard output stream
    * 
-   * @param IppResult
+   * @param result
    */
   public static void print(IppResult result) {
     System.out.println(result.getHttpStatusResponse());

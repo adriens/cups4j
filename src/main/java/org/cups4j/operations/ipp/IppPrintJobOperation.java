@@ -125,7 +125,7 @@ public class IppPrintJobOperation extends IppOperation {
    * 
    * @param ippBuf
    * @param attributeBlocks
-   * @return
+   * @return Job Attributes
    * @throws UnsupportedEncodingException
    */
   private static ByteBuffer getJobAttributes(ByteBuffer ippBuf, String[] attributeBlocks)

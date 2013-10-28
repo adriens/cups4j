@@ -98,7 +98,7 @@ public class IppUtil {
    * 
    * Encode in default encoding ('utf-8')
    * 
-   * @see toBytes(str,null)
+   * @see #toBytes(java.lang.String, java.lang.String)
    * @return array of byte
    * @throws UnsupportedEncodingException
    */
@@ -168,7 +168,7 @@ public class IppUtil {
   /**
    * 
    * @param str
-   * @return
+   * @return TranslatedString
    * @throws CharacterCodingException
    */
   static public String getTranslatedString(String str) throws CharacterCodingException {
@@ -179,7 +179,7 @@ public class IppUtil {
    * 
    * @param str
    * @param charsetName
-   * @return
+   * @return TranslatedString
    * @throws CharacterCodingException
    */
   static public String getTranslatedString(String str, String charsetName) throws CharacterCodingException {

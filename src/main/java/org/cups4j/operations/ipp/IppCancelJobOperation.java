@@ -43,8 +43,7 @@ public class IppCancelJobOperation extends IppOperation {
 
   /**
    * 
-   * @param url
-   *          printer-uri
+   * @param uri printer-uri (the printer url)
    * @param map
    *          attributes
    *          i.e.job-name,ipp-attribute-fidelity,document-name,compression,
@@ -94,7 +93,6 @@ public class IppCancelJobOperation extends IppOperation {
    * @param hostname
    * @param userName
    * @param jobID
-   * @param message
    * @return true on successful cancelation otherwise false.
    * @throws Exception
    */

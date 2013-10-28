@@ -43,7 +43,7 @@ public class IppReleaseJobOperation extends IppOperation {
 
   /**
    * 
-   * @param url
+   * @param uri
    *          printer-uri
    * @param map
    *          attributes
@@ -90,7 +90,6 @@ public class IppReleaseJobOperation extends IppOperation {
    * @param hostname
    * @param userName
    * @param jobID
-   * @param message
    * @return true on successful cancelation otherwise false.
    * @throws Exception
    */

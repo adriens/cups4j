@@ -27,7 +27,7 @@ public class IppResult {
 
   /**
    * 
-   * @return
+   * @return the HttpStatus response as a String
    */
   public String getHttpStatusResponse() {
     return _httpStatusResponse;
@@ -43,7 +43,7 @@ public class IppResult {
 
   /**
    * 
-   * @return
+   * @return the IppStatusResponse as a String
    */
   public String getIppStatusResponse() {
     return _ippStatusResponse;
@@ -59,7 +59,7 @@ public class IppResult {
 
   /**
    * 
-   * @return
+   * @return the list of AttributeGroupList
    */
   public List<AttributeGroup> getAttributeGroupList() {
     return _attributeGroupList;

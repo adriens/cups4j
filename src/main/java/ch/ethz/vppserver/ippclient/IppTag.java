@@ -68,7 +68,7 @@ public class IppTag {
    * 
    * @param ippBuf
    * @param operation
-   * @return
+   * @return operation
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getOperation(ByteBuffer ippBuf, short operation) throws UnsupportedEncodingException {
@@ -81,7 +81,7 @@ public class IppTag {
    * @param operation
    * @param charset
    * @param naturalLanguage
-   * @return
+   * @return operation
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getOperation(ByteBuffer ippBuf, short operation, String charset, String naturalLanguage)
@@ -110,7 +110,7 @@ public class IppTag {
   /**
    * 
    * @param ippBuf
-   * @return
+   * @return OperationAttributestag
    */
   public static ByteBuffer getOperationAttributesTag(ByteBuffer ippBuf) {
     if (ippBuf == null) {
@@ -124,7 +124,7 @@ public class IppTag {
   /**
    * 
    * @param ippBuf
-   * @return
+   * @return Job Attributes tag
    */
   public static ByteBuffer getJobAttributesTag(ByteBuffer ippBuf) {
     if (ippBuf == null) {
@@ -138,7 +138,7 @@ public class IppTag {
   /**
    * 
    * @param ippBuf
-   * @return
+   * @return the Subscription Attributes tag
    */
   public static ByteBuffer getSubscriptionAttributesTag(ByteBuffer ippBuf) {
     if (ippBuf == null) {
@@ -152,7 +152,7 @@ public class IppTag {
   /**
    * 
    * @param ippBuf
-   * @return
+   * @return Event Notification Attributes Tag
    */
   public static ByteBuffer getEventNotificationAttributesTag(ByteBuffer ippBuf) {
     if (ippBuf == null) {
@@ -166,7 +166,7 @@ public class IppTag {
   /**
    * 
    * @param ippBuf
-   * @return
+   * @return Unsupported Attributes Tag
    */
   public static ByteBuffer getUnsupportedAttributesTag(ByteBuffer ippBuf) {
     if (ippBuf == null) {
@@ -180,7 +180,7 @@ public class IppTag {
   /**
    * 
    * @param ippBuf
-   * @return
+   * @return Printer Attributes Tag
    */
   public static ByteBuffer getPrinterAttributesTag(ByteBuffer ippBuf) {
     if (ippBuf == null) {
@@ -194,7 +194,7 @@ public class IppTag {
   /**
    * 
    * @param ippBuf
-   * @return
+   * @return Charset
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getCharset(ByteBuffer ippBuf) throws UnsupportedEncodingException {
@@ -205,7 +205,7 @@ public class IppTag {
    * 
    * @param ippBuf
    * @param attributeName
-   * @return
+   * @return Charset
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getCharset(ByteBuffer ippBuf, String attributeName) throws UnsupportedEncodingException {
@@ -217,7 +217,7 @@ public class IppTag {
    * @param ippBuf
    * @param attributeName
    * @param value
-   * @return
+   * @return Charset
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getCharset(ByteBuffer ippBuf, String attributeName, String value)
@@ -228,7 +228,7 @@ public class IppTag {
   /**
    * 
    * @param ippBuf
-   * @return
+   * @return Natural Language
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getNaturalLanguage(ByteBuffer ippBuf) throws UnsupportedEncodingException {
@@ -239,7 +239,7 @@ public class IppTag {
    * 
    * @param ippBuf
    * @param attributeName
-   * @return
+   * @return Natural Language
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getNaturalLanguage(ByteBuffer ippBuf, String attributeName)
@@ -252,7 +252,7 @@ public class IppTag {
    * @param ippBuf
    * @param attributeName
    * @param value
-   * @return
+   * @return Natural Language
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getNaturalLanguage(ByteBuffer ippBuf, String attributeName, String value)
@@ -263,7 +263,7 @@ public class IppTag {
   /**
    * 
    * @param ippBuf
-   * @return
+   * @return the uri
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getUri(ByteBuffer ippBuf) throws UnsupportedEncodingException {
@@ -274,7 +274,7 @@ public class IppTag {
    * 
    * @param ippBuf
    * @param attributeName
-   * @return
+   * @return the uri as a ByteBuffer
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getUri(ByteBuffer ippBuf, String attributeName) throws UnsupportedEncodingException {
@@ -286,7 +286,7 @@ public class IppTag {
    * @param ippBuf
    * @param attributeName
    * @param value
-   * @return
+   * @return the uri as a ByteBuffer
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getUri(ByteBuffer ippBuf, String attributeName, String value)
@@ -297,7 +297,7 @@ public class IppTag {
   /**
    * 
    * @param ippBuf
-   * @return
+   * @return UriScheme
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getUriScheme(ByteBuffer ippBuf) throws UnsupportedEncodingException {
@@ -308,7 +308,7 @@ public class IppTag {
    * 
    * @param ippBuf
    * @param attributeName
-   * @return
+   * @return UriScheme
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getUriScheme(ByteBuffer ippBuf, String attributeName) throws UnsupportedEncodingException {
@@ -320,7 +320,7 @@ public class IppTag {
    * @param ippBuf
    * @param attributeName
    * @param value
-   * @return
+   * @return UriScheme
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getUriScheme(ByteBuffer ippBuf, String attributeName, String value)
@@ -333,7 +333,7 @@ public class IppTag {
    * @param ippBuf
    * @param attributeName
    * @param value
-   * @return
+   * @return NameWithoutLanguage
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getNameWithoutLanguage(ByteBuffer ippBuf, String attributeName, String value)
@@ -366,7 +366,7 @@ public class IppTag {
    * @param ippBuf
    * @param attributeName
    * @param value
-   * @return
+   * @return TextWithoutLanguage
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getTextWithoutLanguage(ByteBuffer ippBuf, String attributeName, String value)
@@ -396,7 +396,7 @@ public class IppTag {
 
   /**
    * @param ippBuf
-   * @return
+   * @return Integer
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getInteger(ByteBuffer ippBuf) throws UnsupportedEncodingException {
@@ -406,7 +406,7 @@ public class IppTag {
   /**
    * @param ippBuf
    * @param attributeName
-   * @return
+   * @return Integer
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getInteger(ByteBuffer ippBuf, String attributeName) throws UnsupportedEncodingException {
@@ -432,7 +432,7 @@ public class IppTag {
    * @param ippBuf
    * @param attributeName
    * @param value
-   * @return
+   * @return Integer
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getInteger(ByteBuffer ippBuf, String attributeName, int value)
@@ -458,7 +458,7 @@ public class IppTag {
   /**
    * 
    * @param ippBuf
-   * @return
+   * @return Boolean
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getBoolean(ByteBuffer ippBuf) throws UnsupportedEncodingException {
@@ -469,7 +469,7 @@ public class IppTag {
    * 
    * @param ippBuf
    * @param attributeName
-   * @return
+   * @return Boolean
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getBoolean(ByteBuffer ippBuf, String attributeName) throws UnsupportedEncodingException {
@@ -495,7 +495,7 @@ public class IppTag {
    * @param ippBuf
    * @param attributeName
    * @param value
-   * @return
+   * @return Boolean
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getBoolean(ByteBuffer ippBuf, String attributeName, boolean value)
@@ -525,7 +525,7 @@ public class IppTag {
   /**
    * 
    * @param ippBuf
-   * @return
+   * @return Enum
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getEnum(ByteBuffer ippBuf) throws UnsupportedEncodingException {
@@ -536,7 +536,7 @@ public class IppTag {
    * 
    * @param ippBuf
    * @param attributeName
-   * @return
+   * @return Enum
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getEnum(ByteBuffer ippBuf, String attributeName) throws UnsupportedEncodingException {
@@ -561,7 +561,7 @@ public class IppTag {
    * @param ippBuf
    * @param attributeName
    * @param value
-   * @return
+   * @return Enum
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getEnum(ByteBuffer ippBuf, String attributeName, int value)
@@ -586,7 +586,7 @@ public class IppTag {
   /**
    * 
    * @param ippBuf
-   * @return
+   * @return Resolution
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getResolution(ByteBuffer ippBuf) throws UnsupportedEncodingException {
@@ -597,7 +597,7 @@ public class IppTag {
    * 
    * @param ippBuf
    * @param attributeName
-   * @return
+   * @return Resolution
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getResolution(ByteBuffer ippBuf, String attributeName) throws UnsupportedEncodingException {
@@ -624,7 +624,7 @@ public class IppTag {
    * @param value1
    * @param value2
    * @param value3
-   * @return
+   * @return Resolution
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getResolution(ByteBuffer ippBuf, String attributeName, int value1, int value2, byte value3)
@@ -651,7 +651,7 @@ public class IppTag {
   /**
    * 
    * @param ippBuf
-   * @return
+   * @return RangeOfInteger
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getRangeOfInteger(ByteBuffer ippBuf) throws UnsupportedEncodingException {
@@ -662,7 +662,7 @@ public class IppTag {
    * 
    * @param ippBuf
    * @param attributeName
-   * @return
+   * @return RangeOfInteger
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getRangeOfInteger(ByteBuffer ippBuf, String attributeName)
@@ -689,7 +689,7 @@ public class IppTag {
    * @param attributeName
    * @param value1
    * @param value2
-   * @return
+   * @return RangeOfInteger
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getRangeOfInteger(ByteBuffer ippBuf, String attributeName, int value1, int value2)
@@ -715,7 +715,7 @@ public class IppTag {
   /**
    * 
    * @param ippBuf
-   * @return
+   * @return MimeMediaType
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getMimeMediaType(ByteBuffer ippBuf) throws UnsupportedEncodingException {
@@ -726,7 +726,7 @@ public class IppTag {
    * 
    * @param ippBuf
    * @param attributeName
-   * @return
+   * @return MimeMediaType
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getMimeMediaType(ByteBuffer ippBuf, String attributeName)
@@ -739,7 +739,7 @@ public class IppTag {
    * @param ippBuf
    * @param attributeName
    * @param value
-   * @return
+   * @return MimeMediaType
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getMimeMediaType(ByteBuffer ippBuf, String attributeName, String value)
@@ -750,7 +750,7 @@ public class IppTag {
   /**
    * 
    * @param ippBuf
-   * @return
+   * @return Keyword
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getKeyword(ByteBuffer ippBuf) throws UnsupportedEncodingException {
@@ -761,7 +761,7 @@ public class IppTag {
    * 
    * @param ippBuf
    * @param attributeName
-   * @return
+   * @return Keyword
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getKeyword(ByteBuffer ippBuf, String attributeName) throws UnsupportedEncodingException {
@@ -773,7 +773,7 @@ public class IppTag {
    * @param ippBuf
    * @param attributeName
    * @param value
-   * @return
+   * @return Keyword
    * @throws UnsupportedEncodingException
    */
   public static ByteBuffer getKeyword(ByteBuffer ippBuf, String attributeName, String value)
@@ -784,7 +784,7 @@ public class IppTag {
   /**
    * 
    * @param ippBuf
-   * @return
+   * @return End
    */
   public static ByteBuffer getEnd(ByteBuffer ippBuf) {
     if (ippBuf == null) {
@@ -801,7 +801,7 @@ public class IppTag {
    * @param tag
    * @param attributeName
    * @param value
-   * @return
+   * @return UsAscii
    * @throws UnsupportedEncodingException
    */
   private static ByteBuffer getUsAscii(ByteBuffer ippBuf, byte tag, String attributeName, String value)

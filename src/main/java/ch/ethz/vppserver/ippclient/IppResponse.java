@@ -66,7 +66,7 @@ public class IppResponse {
   /**
    * 
    * @param channel
-   * @return
+   * @return The IppResult
    * @throws IOException
    */
   public IppResult getResponse(SocketChannel channel) throws IOException {
@@ -128,8 +128,8 @@ public class IppResponse {
 
   /**
    * 
-   * @param channel
-   * @return
+   * @param buffer channel
+   * @return The IppResult
    * @throws IOException
    */
   public IppResult getResponse(ByteBuffer buffer) throws IOException {
@@ -187,7 +187,7 @@ public class IppResponse {
 
   /**
    * 
-   * @return
+   * @return The Http Header as a String
    */
   private String getHTTPHeader() {
     String endOf = CRLF + CRLF;
@@ -206,7 +206,7 @@ public class IppResponse {
 
   /**
    * 
-   * @return
+   * @return The IppHeader as a String
    */
   private String getIPPHeader() {
     StringBuffer sb = new StringBuffer();
@@ -679,7 +679,7 @@ public class IppResponse {
   /**
    * 
    * @param tag
-   * @return
+   * @return The Name of the Tag
    */
   private String getTagName(String tag) {
     if (tag == null) {
@@ -699,7 +699,7 @@ public class IppResponse {
    * 
    * @param value
    * @param nameOfAttribute
-   * @return
+   * @return The enumName as a String
    */
   private String getEnumName(String value, String nameOfAttribute) {
     if (value == null) {
@@ -726,7 +726,7 @@ public class IppResponse {
    * 
    * @param value
    * @nameOfAttribute
-   * @return
+   * @return the enumName as a String
    */
   private String getEnumName(int value, String nameOfAttribute) {
     if (nameOfAttribute == null) {

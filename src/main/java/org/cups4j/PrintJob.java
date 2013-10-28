@@ -62,7 +62,7 @@ public class PrintJob {
     /**
      * Constructor
      * 
-     * @param byte[] document
+     * @param document
      * 
      */
     public Builder(byte[] document) {
@@ -72,8 +72,7 @@ public class PrintJob {
     /**
      * Constructor
      * 
-     * @param InputStream
-     *          document
+     * @param document
      * 
      */
     public Builder(InputStream document) {
@@ -94,7 +93,7 @@ public class PrintJob {
     /**
      * Page ranges
      * 
-     * @pageRanges pageRanges 1-3, 5, 8, 10-13
+     * @param pageRanges 1-3, 5, 8, 10-13
      * @return Builder
      */
     public Builder pageRanges(String pageRanges) {

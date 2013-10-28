@@ -79,7 +79,7 @@ public class IppJaxb {
    * 
    * @param inputStream
    * @param context
-   * @return
+   * @return unmarshalled version of the object
    * @throws JAXBException
    * @throws FileNotFoundException
    */
@@ -101,7 +101,7 @@ public class IppJaxb {
   /**
    * 
    * @param inputStream
-   * @return
+   * @return unmarshalled version of the object
    * @throws FileNotFoundException
    * @throws JAXBException
    */
@@ -111,7 +111,7 @@ public class IppJaxb {
 
   /**
    * 
-   * @return
+   * @return The list of tags
    */
   public List<Tag> getTagList() {
 
@@ -120,7 +120,7 @@ public class IppJaxb {
 
   /**
    * 
-   * @return
+   * @return list of AttributeGroups
    */
   public List<AttributeGroup> getAttributeGroupList() {
     return _attributeGroupList;
