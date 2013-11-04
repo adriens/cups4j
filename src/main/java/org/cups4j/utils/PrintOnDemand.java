@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  *
- * @author salad74
+ * @author Adrien Sales
  */
 public class PrintOnDemand {
     private static final Logger logger = LoggerFactory.getLogger(PrintOnDemand.class);
