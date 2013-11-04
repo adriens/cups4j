@@ -70,7 +70,7 @@
         <input message="cups host" addproperty="host" defaultvalue="localhost" />
         <input message="cups port" addproperty="port" defaultvalue="631" />
         <input message="cups printer name" addproperty="printer_name"/>
-        <input message="path of the file to print" addproperty="doc_url"/>
+        <input message="path of the file to print" addproperty="doc_url" defaultvalue="target/site/cups4j.pdf"/>
         <java fork="true" failonerror="true" maxmemory="128m" classname="org.cups4j.utils.PrintOnDemand">
             <arg value="${host}"/>
             <arg value="${port}"/>
@@ -80,7 +80,6 @@
                 <pathelement location="target/cups4j-${pom.version}.jar"/>
             </classpath>
         </java>
-
     </target>
     <target name="cups.report.redmine" depends="cups.report.redmine.menu,cups.report.redmine.params" description = "Create comprehensive Jobs report"/>
 
