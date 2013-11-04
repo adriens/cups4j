@@ -30,9 +30,9 @@ import org.apache.http.HttpVersion;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.ResponseHandler;
-import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.InputStreamEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 import org.cups4j.CupsClient;
@@ -151,9 +151,10 @@ public abstract class IppOperation {
       return null;
     }
 
-    //HttpClient client = new DefaultHttpClient();
-    // switched to HttpClientBuilder as DefaultHttpClient is deprecated since httpclient 4.3.1
-     HttpClient client = HttpClientBuilder.create().build();
+    // Switched back from HttpClientBuilder to (deprecated) DefaultHttpClient) as printing was failing
+    //TODO Switch to non-deprecated HttpClientBuilder and make print tests to avoid big regression
+    HttpClient client = new DefaultHttpClient();
+    
 
     // will not work with older versions of CUPS!
      //TODO remove deprecated getParams method
